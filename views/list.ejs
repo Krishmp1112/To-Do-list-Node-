@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div class="box" id="heading">
+        <h1>
+            <%= ListTitle %>
+        </h1>
+    </div>
+    <div class="box">
+
+        <% newListItems.forEach(function(item){ %>
+            <form action="/delete" method="POST">
+            <div class="item">
+                <input type="checkbox" name = "checkbox" value="<%= item._id%>" onChange="this.form.submit()">
+                <p>
+                    <%= item.name %>
+                </p>
+            </div>
+        </form>
+        <% }); %>
+
+        
+                <form action="/list" method="POST" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" style="height: 27px;">
+                    <button type="submit" name="button" value="Today">+</button>
+                </form>
+    </div>
+
+    <script src="" async defer></script>
+</body>
+
+<footer>
+    <center> Copyright 2024 The Pratham's app </censter>
+</footer>
+
+</html>
